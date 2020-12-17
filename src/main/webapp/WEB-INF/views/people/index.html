@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All users</title>
+</head>
+<body>
+<label>All users</label>
+<table>
+    <tr>
+        <td width="50" >Id</td>
+        <td width="130" >Name</td>
+        <td width="130" >Last name</td>
+    </tr>
+</table>
+
+<div th:each="pers:${people}">
+    <table>
+        <tr>
+            <td width="50">
+                <a th:href="@{/people/{id}(id=${pers.getId()})}" th:text="${pers.getId()}">user</a>
+            </td>
+            <td width="130">
+                <a th:href="@{/people/{id}(id=${pers.getId()})}" th:text="${pers.getName()}">user</a>
+            </td>
+            <td width="130">
+                <a th:href="@{/people/{id}(id=${pers.getId()})}" th:text="${pers.getLastName()}">user</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
