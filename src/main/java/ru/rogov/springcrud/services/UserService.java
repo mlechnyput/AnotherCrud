@@ -37,4 +37,8 @@ public class UserService {
         userToBeUpdated.setName(updatedUser.getName());
         userToBeUpdated.setLastName(updatedUser.getLastName());
     }
+
+    public void delete(int id) {
+        people.removeIf(u->u.getId()==id);
+    }
 }
