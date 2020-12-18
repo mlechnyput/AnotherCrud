@@ -1,15 +1,25 @@
 package ru.rogov.springcrud.modelss;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Users1")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column
     private String name;
+
+    @Column
     private String lastName;
 
     public User() {
     }
 
-    public User(int id, String name, String lastName) {
-        this.id=id;
+    public User(String name, String lastName) {
         this.name = name;
         this.lastName = lastName;
     }

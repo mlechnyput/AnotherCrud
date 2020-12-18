@@ -12,7 +12,7 @@ import ru.rogov.springcrud.services.UserService;
 public class UsersController {
 
     @Autowired
-    private UserService userService;
+    UserService userService;
 
     @GetMapping()
     public String index(Model model) {
