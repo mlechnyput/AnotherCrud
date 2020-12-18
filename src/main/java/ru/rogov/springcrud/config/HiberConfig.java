@@ -26,8 +26,7 @@ public class HiberConfig {
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUsername("root");
         dataSource.setPassword("mameluko");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/spring_hiber?verifyServerCertificate=false&useSSL=false" +
-                "&requireSSL=false&useLegacyDatetimeCode=false&amp&serverTimezone=UTC");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/spring_hiber");
         return dataSource;
     }
 

@@ -11,8 +11,13 @@ import ru.rogov.springcrud.services.UserService;
 @RequestMapping("/people")
 public class UsersController {
 
+
+    private UserService userService;
+
     @Autowired
-    UserService userService;
+    public UsersController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping()
     public String index(Model model) {

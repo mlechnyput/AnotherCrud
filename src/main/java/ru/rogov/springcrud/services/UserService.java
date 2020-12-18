@@ -1,46 +1,19 @@
 package ru.rogov.springcrud.services;
 
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import ru.rogov.springcrud.dao.UserDao;
 import ru.rogov.springcrud.modelss.User;
 
 import java.util.List;
 
-@Service
-public class UserService implements UserServiceInterface {
+public interface UserService {
 
-    @Autowired
-    UserDao ud;
+    public List<User> index();
 
-    @Transactional(readOnly = true)
-    @Override
-    public List<User> index() {
-        return ud.index();
-    }
+    public User show(int id);
 
-    @Transactional(readOnly = true)
-    @Override
-    public User show(int id) {
-        return ud.show(id);
-    }
+    public void save(User user);
 
-    @Transactional
-    @Override
-    public void save(User user) {
-        ud.save(user);
-    }
+    public void update(int id, User updatedUser);
 
-    @Transactional
-    @Override
-    public void update(int id, User updatedUser) {
-        ud.update(id, updatedUser);
-    }
+    public void delete(int id);
 
-    @Transactional
-    @Override
-    public void delete(int id) {
-        ud.delete(id);
-    }
 }
